@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Admin Dashboard | VelvetStore Atelier</title>
+  <meta name="description" content="Private store management dashboard for VelvetStore Atelier press-on nails." />
+
+  <!-- Google Fonts & Material Symbols -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-tint": "#7d562d",
+            "tertiary-container": "#b8a5cd",
+            "surface-bright": "#fff8f9",
+            "surface-dim": "#e5d6dc",
+            "on-secondary-container": "#765d58",
+            "on-error": "#ffffff",
+            "outline-variant": "#d4c4b7",
+            "error-container": "#ffdad6",
+            "on-tertiary": "#ffffff",
+            "on-primary": "#ffffff",
+            "inverse-on-surface": "#fcedf2",
+            "tertiary-fixed-dim": "#d2bfe8",
+            "surface-variant": "#eddfe4",
+            "tertiary": "#67577c",
+            "on-secondary": "#ffffff",
+            "primary-fixed-dim": "#f0bd8b",
+            "surface-container-low": "#fff0f5",
+            "secondary-fixed-dim": "#dfbfba",
+            "surface-container-high": "#f3e4ea",
+            "primary-container": "#d4a373",
+            "background": "#fff8f9",
+            "primary": "#7d562d",
+            "tertiary-fixed": "#eddcff",
+            "surface-container-lowest": "#ffffff",
+            "on-surface": "#21191d",
+            "on-tertiary-fixed-variant": "#4f4063",
+            "on-primary-fixed-variant": "#623f18",
+            "on-primary-container": "#5b3912",
+            "on-tertiary-container": "#493a5c",
+            "secondary": "#715954",
+            "primary-fixed": "#ffdcbd",
+            "surface": "#fff8f9",
+            "inverse-surface": "#362e32",
+            "on-surface-variant": "#50453b",
+            "on-error-container": "#93000a",
+            "on-tertiary-fixed": "#221535",
+            "secondary-fixed": "#fcdbd5",
+            "on-primary-fixed": "#2c1600",
+            "on-secondary-fixed-variant": "#58413d",
+            "inverse-primary": "#f0bd8b",
+            "outline": "#82756a",
+            "surface-container-highest": "#eddfe4",
+            "error": "#ba1a1a",
+            "on-secondary-fixed": "#291714",
+            "on-background": "#21191d",
+            "surface-container": "#f9eaef",
+            "secondary-container": "#f9d8d2"
+          },
+          fontFamily: {
+            "serif-headline": ["Playfair Display", "serif"],
+            "sans-body": ["Plus Jakarta Sans", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body class="bg-background font-sans-body text-on-surface antialiased min-h-screen flex flex-col">
+
+  <!-- =========================================================================
+       ADMIN HEADER
+       ========================================================================= -->
+  <header class="header-glass sticky top-0 z-40 border-b border-surface-container">
+    <div class="max-w-[1360px] mx-auto px-6 h-18 flex items-center justify-between">
+      
+      <div class="flex items-center gap-3">
+        <a href="/" class="w-9 h-9 rounded-full bg-secondary-container flex items-center justify-center text-primary shadow-xs">
+          <span class="material-symbols-outlined text-[20px] icon-filled">spa</span>
+        </a>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-2">
+            <span class="font-serif-headline text-xl font-bold text-primary">VelvetStore</span>
+            <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-surface-container text-on-secondary-container">Admin</span>
+          </div>
+          <span class="text-[10px] text-on-surface-variant">Private Atelier Store Management</span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <a 
+          href="/" 
+          class="flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline bg-surface-container px-3.5 py-1.5 rounded-full transition-colors"
+        >
+          <span class="material-symbols-outlined text-[16px]">storefront</span>
+          <span>View Public Store</span>
+        </a>
+
+        <button 
+          type="button" 
+          onclick="handleAdminLogout()" 
+          class="text-xs text-on-surface-variant hover:text-error p-2 rounded-full hover:bg-surface-container transition-colors cursor-pointer"
+          title="Sign Out of Admin"
+        >
+          <span class="material-symbols-outlined text-[20px]">logout</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       ADMIN MAIN CONTENT AREA
+       ========================================================================= -->
+  <main class="flex-1 max-w-[1360px] w-full mx-auto px-6 py-8">
+    
+    <!-- 1. Passcode Login Gate (Shown when not authenticated) -->
+    <div id="admin-login-view" class="max-w-md mx-auto my-12 bg-surface-container-lowest p-8 rounded-3xl shadow-xl border border-surface-container text-center">
+      <div class="w-14 h-14 rounded-full bg-secondary-container flex items-center justify-center text-primary mx-auto mb-4">
+        <span class="material-symbols-outlined text-[28px] icon-filled">lock</span>
+      </div>
+      <h2 class="font-serif-headline text-2xl font-bold text-on-surface">Private Atelier Admin</h2>
+      <p class="text-xs text-on-surface-variant mt-1.5 mb-6">Enter your store administrator passcode to manage products and orders.</p>
+      
+      <form onsubmit="handleAdminLogin(event)" class="flex flex-col gap-4">
+        <div id="admin-login-error" class="hidden text-xs text-red-600 bg-red-50 p-2.5 rounded-xl border border-red-200"></div>
+
+        <div class="relative flex items-center">
+          <span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant/60 text-[18px]">key</span>
+          <input 
+            id="admin-passcode-input" 
+            type="password" 
+            required 
+            placeholder="Enter admin passcode" 
+            class="w-full pl-10 pr-4 py-3 rounded-full bg-surface-container-low text-xs text-on-surface outline-none focus:ring-2 focus:ring-primary-container"
+          />
+        </div>
+
+        <button 
+          type="submit" 
+          class="btn-atelier-primary py-3 rounded-full text-xs font-bold flex items-center justify-center gap-2 cursor-pointer shadow-md"
+        >
+          <span class="material-symbols-outlined text-[16px]">login</span>
+          <span>Access Atelier Dashboard</span>
+        </button>
+
+        <p class="text-[11px] text-on-surface-variant/70 mt-2">
+          (Default demo passcode: <code class="font-mono bg-surface-container px-1.5 py-0.5 rounded text-primary font-bold">admin123</code> — customizable in admin.js)
+        </p>
+      </form>
+    </div>
+
+    <!-- 2. Dashboard View (Shown after authentication) -->
+    <div id="admin-dashboard-view" class="hidden flex flex-col gap-8">
+      
+      <!-- Top Stats Overview Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        
+        <div class="bg-surface-container-lowest rounded-2xl p-6 border border-surface-container shadow-xs flex items-center justify-between">
+          <div>
+            <span class="text-xs font-semibold text-on-surface-variant uppercase tracking-wider">Atelier Products</span>
+            <h3 id="stat-products-count" class="font-serif-headline text-3xl font-bold text-on-surface mt-1">8</h3>
+            <p class="text-[11px] text-primary mt-0.5">Active in online boutique</p>
+          </div>
+          <div class="w-12 h-12 rounded-xl bg-secondary-container flex items-center justify-center text-primary">
+            <span class="material-symbols-outlined text-[24px]">inventory_2</span>
+          </div>
+        </div>
+
+        <div class="bg-surface-container-lowest rounded-2xl p-6 border border-surface-container shadow-xs flex items-center justify-between">
+          <div>
+            <span class="text-xs font-semibold text-on-surface-variant uppercase tracking-wider">Customer Orders</span>
+            <h3 id="stat-orders-count" class="font-serif-headline text-3xl font-bold text-on-surface mt-1">0</h3>
+            <p class="text-[11px] text-primary mt-0.5">Received through website & WhatsApp</p>
+          </div>
+          <div class="w-12 h-12 rounded-xl bg-tertiary-fixed flex items-center justify-center text-tertiary">
+            <span class="material-symbols-outlined text-[24px]">shopping_bag</span>
+          </div>
+        </div>
+
+        <div class="bg-surface-container-lowest rounded-2xl p-6 border border-surface-container shadow-xs flex items-center justify-between">
+          <div>
+            <span class="text-xs font-semibold text-on-surface-variant uppercase tracking-wider">Estimated Revenue</span>
+            <h3 id="stat-revenue-total" class="font-serif-headline text-3xl font-bold text-on-surface mt-1">Rs 0</h3>
+            <p class="text-[11px] text-primary mt-0.5">Non-cancelled orders total</p>
+          </div>
+          <div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center text-primary">
+            <span class="material-symbols-outlined text-[24px]">payments</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Tab Switcher (Products vs Orders) -->
+      <div class="flex items-center justify-between border-b border-surface-container pb-4">
+        <div class="flex items-center gap-2">
+          <button 
+            type="button" 
+            id="tab-btn-products" 
+            onclick="switchAdminTab('products')" 
+            class="px-5 py-2.5 rounded-full font-bold text-xs bg-primary text-white shadow-xs cursor-pointer transition-all"
+          >
+            Product Catalog
+          </button>
+          <button 
+            type="button" 
+            id="tab-btn-orders" 
+            onclick="switchAdminTab('orders')" 
+            class="px-5 py-2.5 rounded-full font-bold text-xs bg-surface-container text-on-surface-variant hover:text-on-surface cursor-pointer transition-all"
+          >
+            Customer Orders
+          </button>
+        </div>
+
+        <!-- Catalog Action Buttons -->
+        <div class="flex items-center gap-2">
+          <button 
+            type="button" 
+            onclick="resetToDefaultCatalog()" 
+            class="text-xs text-on-surface-variant hover:text-primary px-3 py-2 rounded-full border border-surface-container hover:bg-surface-container transition-colors cursor-pointer"
+            title="Reset back to initial 8 sets"
+          >
+            Reset Catalog
+          </button>
+          <button 
+            type="button" 
+            onclick="openAddProductModal()" 
+            class="btn-atelier-primary px-4 py-2 rounded-full text-xs font-bold flex items-center gap-1.5 cursor-pointer"
+          >
+            <span class="material-symbols-outlined text-[16px]">add</span>
+            <span>Add New Product</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- SECTION A: PRODUCTS MANAGEMENT TABLE -->
+      <div id="admin-section-products" class="bg-surface-container-lowest rounded-2xl border border-surface-container shadow-xs overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs">
+            <thead class="bg-surface-container text-on-surface font-bold uppercase tracking-wider text-[11px]">
+              <tr>
+                <th class="py-3 px-4">ID</th>
+                <th class="py-3 px-4">Product Set</th>
+                <th class="py-3 px-4">Category</th>
+                <th class="py-3 px-4">Shape</th>
+                <th class="py-3 px-4">Price</th>
+                <th class="py-3 px-4">Badge</th>
+                <th class="py-3 px-4 text-right">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="admin-products-table-body" class="divide-y divide-surface-container">
+              <!-- Populated by admin.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- SECTION B: ORDERS MANAGEMENT TABLE -->
+      <div id="admin-section-orders" class="hidden bg-surface-container-lowest rounded-2xl border border-surface-container shadow-xs overflow-hidden">
+        <div class="p-4 border-b border-surface-container bg-surface-container-low/50 flex items-center justify-between">
+          <h4 class="font-serif-headline text-base font-bold text-on-surface">Client Order Log</h4>
+          <span class="text-[11px] text-on-surface-variant">Real-time orders placed via store checkout</span>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs">
+            <thead class="bg-surface-container text-on-surface font-bold uppercase tracking-wider text-[11px]">
+              <tr>
+                <th class="py-3 px-4">Order Ref / Date</th>
+                <th class="py-3 px-4">Customer Info</th>
+                <th class="py-3 px-4">Items & Sizes</th>
+                <th class="py-3 px-4">Total / Pay</th>
+                <th class="py-3 px-4">Status</th>
+                <th class="py-3 px-4 text-right">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="admin-orders-table-body" class="divide-y divide-surface-container">
+              <!-- Populated by admin.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       ADD / EDIT PRODUCT MODAL
+       ========================================================================= -->
+  <div id="product-modal" class="modal-overlay modal-hidden fixed inset-0 bg-black/50 backdrop-blur-xs z-50 flex items-center justify-center p-4">
+    <div class="modal-content w-full max-w-lg bg-surface-container-lowest rounded-3xl p-6 sm:p-8 shadow-2xl relative border border-surface-container max-h-[92vh] overflow-y-auto">
+      
+      <button 
+        type="button" 
+        onclick="closeProductModal()" 
+        class="absolute top-5 right-5 w-8 h-8 rounded-full flex items-center justify-center hover:bg-surface-container text-on-surface-variant transition-colors cursor-pointer"
+      >
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+
+      <div class="text-center mb-6">
+        <h3 id="product-modal-title" class="font-serif-headline text-2xl font-bold text-on-surface">Add New Press-On Set</h3>
+        <p class="text-xs text-on-surface-variant mt-1">Configure nail set attributes, pricing, and imagery for your boutique.</p>
+      </div>
+
+      <form id="product-form" onsubmit="handleProductFormSubmit(event)" class="flex flex-col gap-4">
+        
+        <div>
+          <label class="block text-xs font-semibold text-on-surface-variant mb-1">Product Name *</label>
+          <input 
+            id="prod-name" 
+            type="text" 
+            required 
+            placeholder="e.g. Amber Glaze & Gold Foil" 
+            class="w-full px-4 py-2.5 rounded-full bg-surface-container-low text-xs text-on-surface outline-none focus:ring-1 focus:ring-primary-container"
+          />
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-on-surface-variant mb-1">Collection / Category *</label>
+            <select 
+              id="prod-category" 
+              required 
+              class="w-full px-4 py-2.5 rounded-full bg-surface-container-low text-xs text-on-surface outline-none focus:ring-1 focus:ring-primary-container cursor-pointer"
+            >
+              <option value="Glam">Glam</option>
+              <option value="Minimal">Minimal</option>
+              <option value="Floral">Floral</option>
+              <option value="Bridal">Bridal</option>
+              <option value="Seasonal">Seasonal</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-on-surface-variant mb-1">Price (in store currency) *</label>
+            <input 
+              id="prod-price" 
+              type="number" 
+              required 
+              placeholder="e.g. 1499" 
+              class="w-full px-4 py-2.5 rounded-full bg-surface-container-low text-xs text-on-surface outline-none focus:ring-1 focus:ring-primary-container"
+            />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-on-surface-variant mb-1">Nail Shape</label>
+            <input 
+              id="prod-shape" 
+              type="text" 
+              placeholder="e.g. Medium Almond" 
+              class="w-full px-4 py-2.5 rounded-full bg-surface-container-low text-xs text-on-surface outline-none focus:ring-1 focus:ring-primary-container"
+            />
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-on-surface-variant mb-1">Card Badge</label>
+            <input 
+              id="prod-badge" 
+              type="text" 
+              placeholder="e.g. HOT, NEW, COUTURE" 
+              class="w-full px-4 py-2.5 rounded-full bg-surface-container-low text-xs text-on-surface outline-none focus:ring-1 focus:ring-primary-container"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-on-surface-variant mb-1">Image URL *</label>
+          <input 
+            id="prod-image" 
+            type="url" 
+            required 
+            oninput="document.getElementById('modal-img-preview').src = this.value"
+            placeholder="https://images.unsplash.com/..." 
+            class="w-full px-4 py-2.5 rounded-full bg-surface-container-low text-xs text-on-surface outline-none focus:ring-1 focus:ring-primary-container"
+          />
+          <!-- Live Preview -->
+          <div class="mt-2 flex items-center gap-3 bg-surface-container-low p-2 rounded-xl">
+            <img 
+              id="modal-img-preview" 
+              src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=400&q=80" 
+              alt="Preview" 
+              class="w-14 h-14 rounded-lg object-cover bg-surface-container"
+            />
+            <span class="text-[11px] text-on-surface-variant">Live image preview</span>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-on-surface-variant mb-1">Description</label>
+          <textarea 
+            id="prod-desc" 
+            rows="2" 
+            placeholder="Artisanal features, gel layers, finish details..." 
+            class="w-full p-3 rounded-2xl bg-surface-container-low text-xs text-on-surface outline-none focus:ring-1 focus:ring-primary-container resize-none"
+          ></textarea>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-on-surface-variant mb-1">Rating (e.g. 4.9)</label>
+          <input 
+            id="prod-rating" 
+            type="number" 
+            step="0.1" 
+            max="5" 
+            min="1" 
+            value="5.0" 
+            class="w-full px-4 py-2.5 rounded-full bg-surface-container-low text-xs text-on-surface outline-none focus:ring-1 focus:ring-primary-container"
+          />
+        </div>
+
+        <button 
+          type="submit" 
+          class="w-full mt-2 btn-atelier-primary py-3 rounded-full text-xs font-bold cursor-pointer shadow-md"
+        >
+          Save Product Set
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+
+  <footer class="border-t border-surface-container py-6 text-center text-xs text-on-surface-variant bg-surface-container-low">
+    <p>© 2026 VelvetStore Private Management Console</p>
+  </footer>
+
+  <!-- Admin Logic Script -->
+  <script type="module" src="/admin.js"></script>
+</body>
+</html>

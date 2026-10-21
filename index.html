@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>VelvetStore | Luxury Press-On Nails Atelier</title>
+  <meta name="description" content="Handcrafted salon-grade luxury press-on nails boutique with custom sizing, interactive cart, collection filtering, WhatsApp checkout, and private store admin." />
+  <meta property="og:title" content="VelvetStore | Luxury Press-On Nails Atelier" />
+  <meta property="og:description" content="Handcrafted salon-grade luxury press-on nails boutique with custom sizing, interactive cart, collection filtering, WhatsApp checkout, and private store admin." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Google Fonts & Material Symbols -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+
+  <!-- Tailwind CSS CDN for exact visual match to Stitch design -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-tint": "#7d562d",
+            "tertiary-container": "#b8a5cd",
+            "surface-bright": "#fff8f9",
+            "surface-dim": "#e5d6dc",
+            "on-secondary-container": "#765d58",
+            "on-error": "#ffffff",
+            "outline-variant": "#d4c4b7",
+            "error-container": "#ffdad6",
+            "on-tertiary": "#ffffff",
+            "on-primary": "#ffffff",
+            "inverse-on-surface": "#fcedf2",
+            "tertiary-fixed-dim": "#d2bfe8",
+            "surface-variant": "#eddfe4",
+            "tertiary": "#67577c",
+            "on-secondary": "#ffffff",
+            "primary-fixed-dim": "#f0bd8b",
+            "surface-container-low": "#fff0f5",
+            "secondary-fixed-dim": "#dfbfba",
+            "surface-container-high": "#f3e4ea",
+            "primary-container": "#d4a373",
+            "background": "#fff8f9",
+            "primary": "#7d562d",
+            "tertiary-fixed": "#eddcff",
+            "surface-container-lowest": "#ffffff",
+            "on-surface": "#21191d",
+            "on-tertiary-fixed-variant": "#4f4063",
+            "on-primary-fixed-variant": "#623f18",
+            "on-primary-container": "#5b3912",
+            "on-tertiary-container": "#493a5c",
+            "secondary": "#715954",
+            "primary-fixed": "#ffdcbd",
+            "surface": "#fff8f9",
+            "inverse-surface": "#362e32",
+            "on-surface-variant": "#50453b",
+            "on-error-container": "#93000a",
+            "on-tertiary-fixed": "#221535",
+            "secondary-fixed": "#fcdbd5",
+            "on-primary-fixed": "#2c1600",
+            "on-secondary-fixed-variant": "#58413d",
+            "inverse-primary": "#f0bd8b",
+            "outline": "#82756a",
+            "surface-container-highest": "#eddfe4",
+            "error": "#ba1a1a",
+            "on-secondary-fixed": "#291714",
+            "on-background": "#21191d",
+            "surface-container": "#f9eaef",
+            "secondary-container": "#f9d8d2"
+          },
+          fontFamily: {
+            "serif-headline": ["Playfair Display", "serif"],
+            "sans-body": ["Plus Jakarta Sans", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body class="bg-background font-sans-body text-on-surface antialiased">
+
+  <!-- =========================================================================
+       1. STICKY NAVBAR
+       ========================================================================= -->
+  <header class="fixed top-0 left-0 right-0 z-50 header-glass shadow-[0_1px_12px_rgba(74,62,69,0.04)] border-b border-surface-container">
+    <div class="h-20 max-w-[1360px] mx-auto px-6 lg:px-8 flex items-center justify-between gap-4">
+      
+      <!-- Brand Logo & Name -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-primary shadow-xs group-hover:scale-105 transition-transform">
+          <span class="material-symbols-outlined text-[22px] icon-filled">spa</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-serif-headline text-2xl font-bold tracking-tight text-primary">VelvetStore</span>
+          <span class="text-[10px] text-primary-container uppercase tracking-widest font-semibold">Atelier Nails</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-6">
+        <a href="#hero" class="text-sm font-semibold text-on-surface hover:text-primary transition-colors py-1.5 px-3 rounded-full hover:bg-surface-container">Home</a>
+        <a href="#shop" class="text-sm font-semibold text-on-surface hover:text-primary transition-colors py-1.5 px-3 rounded-full hover:bg-surface-container">Shop</a>
+        <a href="#collections" class="text-sm font-semibold text-on-surface hover:text-primary transition-colors py-1.5 px-3 rounded-full hover:bg-surface-container">Collections</a>
+        <a href="#why-choose" class="text-sm font-semibold text-on-surface hover:text-primary transition-colors py-1.5 px-3 rounded-full hover:bg-surface-container">About Us</a>
+        <a href="#contact" class="text-sm font-semibold text-on-surface hover:text-primary transition-colors py-1.5 px-3 rounded-full hover:bg-surface-container">Contact Us</a>
+      </nav>
+
+      <!-- Right Header Actions (Cart, Auth, Mobile Menu Toggle) -->
+      <div class="flex items-center gap-3">
+        
+        <!-- Cart Drawer Button -->
+        <button 
+          type="button" 
+          onclick="openCartDrawer()" 
+          class="relative p-2.5 rounded-full hover:bg-surface-container-high transition-colors flex items-center justify-center text-on-surface cursor-pointer"
+          aria-label="Open Shopping Bag"
+        >
+          <span class="material-symbols-outlined text-[24px]">shopping_bag</span>
+          <span class="cart-count-badge absolute -top-1 -right-1 bg-primary text-white text-[11px] font-bold w-5 h-5 rounded-full flex items-center justify-center ring-2 ring-surface shadow-sm">
+            0
+          </span>
+        </button>
+
+        <!-- Guest View: Login & Sign Up Buttons -->
+        <div class="auth-guest-view hidden sm:flex items-center gap-2">
+          <button 
+            type="button" 
+            onclick="openAuthModal('login')" 
+            class="text-xs font-bold text-on-surface-variant hover:text-primary px-4 py-2 transition-colors cursor-pointer"
+          >
+            Login
+          </button>
+          <button 
+            type="button" 
+            onclick="openAuthModal('signup')" 
+            class="btn-atelier-primary text-xs font-bold px-5 py-2.5 rounded-full cursor-pointer"
+          >
+            Sign Up
+          </button>
+        </div>
+
+        <!-- Logged In User View (Avatar, Name & Logout) -->
+        <div class="auth-user-view hidden flex items-center gap-2">
+          <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container border border-surface-container-high">
+            <div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-white text-xs">
+              <span class="material-symbols-outlined text-[14px]">person</span>
+            </div>
+            <span class="auth-user-name text-xs font-bold text-on-surface">Client</span>
+          </div>
+          <button 
+            type="button" 
+            onclick="logout()" 
+            class="text-xs text-on-surface-variant hover:text-error px-2 py-1 transition-colors cursor-pointer"
+            title="Sign Out"
+          >
+            <span class="material-symbols-outlined text-[18px]">logout</span>
+          </button>
+        </div>
+
+        <!-- Admin Quick Access Icon -->
+        <a 
+          href="/admin.html" 
+          class="hidden md:flex p-2 rounded-full hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors"
+          title="Store Admin Dashboard"
+        >
+          <span class="material-symbols-outlined text-[20px]">tune</span>
+        </a>
+
+        <!-- Mobile Hamburger Menu Button -->
+        <button 
+          type="button" 
+          onclick="toggleMobileMenu()" 
+          class="lg:hidden p-2 rounded-full hover:bg-surface-container text-on-surface cursor-pointer"
+          aria-label="Toggle navigation"
+        >
+          <span class="material-symbols-outlined text-[24px]">menu</span>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Navigation -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-surface-container bg-surface-container-lowest px-6 py-4 shadow-lg">
+      <div class="flex flex-col gap-3">
+        <a href="#hero" onclick="closeMobileMenu()" class="text-sm font-semibold py-2 text-on-surface hover:text-primary border-b border-surface-container">Home</a>
+        <a href="#shop" onclick="closeMobileMenu()" class="text-sm font-semibold py-2 text-on-surface hover:text-primary border-b border-surface-container">Shop</a>
+        <a href="#collections" onclick="closeMobileMenu()" class="text-sm font-semibold py-2 text-on-surface hover:text-primary border-b border-surface-container">Collections</a>
+        <a href="#why-choose" onclick="closeMobileMenu()" class="text-sm font-semibold py-2 text-on-surface hover:text-primary border-b border-surface-container">About Us</a>
+        <a href="#contact" onclick="closeMobileMenu()" class="text-sm font-semibold py-2 text-on-surface hover:text-primary border-b border-surface-container">Contact Us</a>
+        <a href="/admin.html" class="text-sm font-semibold py-2 text-primary flex items-center gap-2">
+          <span class="material-symbols-outlined text-[18px]">tune</span>
+          <span>Store Admin Dashboard</span>
+        </a>
+        
+        <!-- Mobile Auth buttons -->
+        <div class="auth-guest-view flex items-center gap-2 pt-2">
+          <button type="button" onclick="closeMobileMenu(); openAuthModal('login');" class="flex-1 py-2.5 rounded-full border border-primary text-primary text-xs font-bold text-center">
+            Login
+          </button>
+          <button type="button" onclick="closeMobileMenu(); openAuthModal('signup');" class="flex-1 btn-atelier-primary py-2.5 rounded-full text-xs font-bold text-center">
+            Sign Up
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       MAIN CONTENT
+       ========================================================================= -->
+  <main class="w-full pt-20 bg-background">
+    <div class="flex flex-col w-full">
+
+      <!-- =======================================================================
+           2. HERO SECTION
+           ======================================================================= -->
+      <div id="hero" class="relative w-full overflow-hidden">
+        <!-- Subtle Ambient Glow Orbs -->
+        <div class="absolute -top-32 left-1/4 w-[600px] h-[600px] bg-secondary-container/40 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+        <div class="absolute top-48 right-10 w-[500px] h-[500px] bg-tertiary-fixed/30 rounded-full blur-[130px] pointer-events-none -z-10"></div>
+
+        <section class="max-w-[1360px] mx-auto px-6 lg:px-8 pt-8 pb-16 lg:py-20">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            
+            <!-- Hero Text Column -->
+            <div class="lg:col-span-7 flex flex-col items-start gap-4 lg:pr-6">
+              
+              <!-- Atelier Tag -->
+              <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-container-high text-on-secondary-container shadow-xs">
+                <span class="material-symbols-outlined text-primary text-[18px]">auto_awesome</span>
+                <span class="text-xs font-semibold tracking-wider uppercase">Atelier Press-On Collection · 100% Reusable</span>
+              </div>
+
+              <!-- Editorial Display Headline -->
+              <h1 class="font-serif-headline text-4xl sm:text-5xl lg:text-6xl text-on-surface font-semibold tracking-tight leading-tight">
+                Wear Your Style at <br class="hidden sm:inline"/>
+                <span class="italic font-normal text-primary">Your Fingertips</span>
+              </h1>
+
+              <!-- Subtext -->
+              <p class="text-base sm:text-lg text-on-surface-variant max-w-xl leading-relaxed">
+                Handcrafted press-on nail art, made to last and made to impress. Salon-grade gel architecture meticulously curated for the modern connoisseur.
+              </p>
+
+              <!-- Interactive CTAs -->
+              <div class="flex flex-wrap items-center gap-4 pt-2 w-full sm:w-auto">
+                <a 
+                  href="#shop" 
+                  class="w-full sm:w-auto text-center btn-atelier-primary px-8 py-3.5 rounded-full text-sm font-bold flex items-center justify-center gap-2"
+                >
+                  <span>Shop Now</span>
+                  <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </a>
+                <a 
+                  href="#collections" 
+                  class="w-full sm:w-auto text-center bg-surface-container text-on-surface px-6 py-3.5 rounded-full text-sm font-semibold hover:bg-surface-container-high transition-all flex items-center justify-center gap-2 shadow-xs"
+                >
+                  <span>View Collections</span>
+                  <span class="material-symbols-outlined text-[18px]">north_east</span>
+                </a>
+              </div>
+
+              <!-- Proof Badges -->
+              <div class="grid grid-cols-3 gap-3 pt-6 w-full max-w-lg">
+                <div class="flex items-center gap-2.5">
+                  <span class="w-9 h-9 rounded-full bg-secondary-container flex items-center justify-center text-primary shrink-0">
+                    <span class="material-symbols-outlined text-[18px]">shield</span>
+                  </span>
+                  <span class="text-xs text-on-surface-variant font-bold leading-tight">Salon-grade gel</span>
+                </div>
+                <div class="flex items-center gap-2.5">
+                  <span class="w-9 h-9 rounded-full bg-tertiary-fixed flex items-center justify-center text-tertiary shrink-0">
+                    <span class="material-symbols-outlined text-[18px]">schedule</span>
+                  </span>
+                  <span class="text-xs text-on-surface-variant font-bold leading-tight">2-3 week wear</span>
+                </div>
+                <div class="flex items-center gap-2.5">
+                  <span class="w-9 h-9 rounded-full bg-primary-fixed flex items-center justify-center text-primary shrink-0">
+                    <span class="material-symbols-outlined text-[18px]">touch_app</span>
+                  </span>
+                  <span class="text-xs text-on-surface-variant font-bold leading-tight">10 min apply</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Hero Visual Showcase -->
+            <div class="lg:col-span-5 relative mt-8 lg:mt-0">
+              <div class="absolute inset-0 bg-gradient-to-tr from-primary-fixed-dim/40 via-secondary-container/60 to-tertiary-fixed-dim/30 rounded-3xl blur-2xl transform rotate-1 scale-95"></div>
+              
+              <div class="relative bg-surface-container-lowest rounded-3xl overflow-hidden shadow-[0_20px_40px_-8px_rgba(74,62,69,0.12)] p-3 border border-surface-container">
+                <div class="relative w-full h-[460px] sm:h-[520px] rounded-2xl overflow-hidden bg-surface-container">
+                  <img 
+                    src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=1000&q=80" 
+                    alt="Editorial luxury handcrafted press on nails with pearl and rose gold accents" 
+                    class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700"
+                  />
+                  
+                  <!-- Floating Luxury Pill Badge -->
+                  <div class="absolute bottom-5 left-5 right-5 sm:right-auto bg-white/95 backdrop-blur-md px-4 py-3 rounded-2xl shadow-lg flex items-center gap-3 border border-outline-variant/30">
+                    <div class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></div>
+                    <div class="flex flex-col">
+                      <span class="text-[10px] uppercase font-bold tracking-wider text-primary">Bestseller Set</span>
+                      <span class="text-xs font-bold text-on-surface">Rose Quartz & Pearl Glaze</span>
+                    </div>
+                    <span class="ml-auto font-serif-headline text-base font-bold text-primary pl-3">Rs 1,699</span>
+                  </div>
+
+                  <!-- Top Rating Badge -->
+                  <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-on-surface text-xs font-bold shadow-xs flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[15px] text-primary icon-filled">star</span>
+                    <span>5.0 (210)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+      </div>
+
+      <!-- =======================================================================
+           3. FEATURED COLLECTIONS SECTION (INTERACTIVE FILTER)
+           ======================================================================= -->
+      <section id="collections" class="w-full bg-surface-container-low py-16">
+        <div class="max-w-[1360px] mx-auto px-6 lg:px-8">
+          
+          <!-- Section Header -->
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+            <div class="flex flex-col gap-1 max-w-xl">
+              <span class="text-xs font-bold text-primary uppercase tracking-widest">CURATED ATELIER</span>
+              <h2 class="font-serif-headline text-3xl sm:text-4xl font-bold text-on-surface">Explore Our Collections</h2>
+              <p class="text-sm text-on-surface-variant">Click any collection to filter the atelier shop below.</p>
+            </div>
+            <button 
+              type="button" 
+              onclick="filterByCollection('All')" 
+              class="inline-flex items-center gap-2 text-xs font-bold text-primary hover:underline group cursor-pointer"
+            >
+              <span>View All Collections</span>
+              <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            </button>
+          </div>
+
+          <!-- 4 Collection Cards Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <!-- Glam Card -->
+            <div 
+              onclick="filterByCollection('Glam')" 
+              class="group relative flex flex-col bg-surface-container-lowest rounded-2xl overflow-hidden shadow-[0_8px_24px_-4px_rgba(74,62,69,0.05)] hover:shadow-[0_16px_32px_-6px_rgba(74,62,69,0.12)] transition-all transform hover:-translate-y-1 cursor-pointer border border-surface-container"
+            >
+              <div class="relative h-72 w-full overflow-hidden bg-surface-container">
+                <img 
+                  src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=800&q=80" 
+                  alt="Glam Atelier press-on nails" 
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-on-surface text-[11px] font-bold">
+                  Statement Couture
+                </div>
+                <div class="absolute bottom-3 left-3 right-3 text-white">
+                  <span class="text-[10px] uppercase tracking-wider text-primary-fixed-dim block font-bold">From Rs 1,499</span>
+                  <h3 class="font-serif-headline text-xl font-bold">Glam Atelier</h3>
+                </div>
+              </div>
+              <div class="p-4 flex flex-col gap-2 flex-1 justify-between bg-surface-container-lowest">
+                <p class="text-xs text-on-surface-variant line-clamp-2">High-shine chrome, 3D hand-set gemstones, sculpted crystal tiers, and champagne shimmer.</p>
+                <div class="pt-2 flex items-center justify-between text-primary text-xs font-bold">
+                  <span>Explore Glam</span>
+                  <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Minimal Card -->
+            <div 
+              onclick="filterByCollection('Minimal')" 
+              class="group relative flex flex-col bg-surface-container-lowest rounded-2xl overflow-hidden shadow-[0_8px_24px_-4px_rgba(74,62,69,0.05)] hover:shadow-[0_16px_32px_-6px_rgba(74,62,69,0.12)] transition-all transform hover:-translate-y-1 cursor-pointer border border-surface-container"
+            >
+              <div class="relative h-72 w-full overflow-hidden bg-surface-container">
+                <img 
+                  src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=800&q=80" 
+                  alt="Minimal clean aesthetic press-on nails" 
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-on-surface text-[11px] font-bold">
+                  Clean Aesthetic
+                </div>
+                <div class="absolute bottom-3 left-3 right-3 text-white">
+                  <span class="text-[10px] uppercase tracking-wider text-primary-fixed-dim block font-bold">From Rs 1,299</span>
+                  <h3 class="font-serif-headline text-xl font-bold">Pure Minimal</h3>
+                </div>
+              </div>
+              <div class="p-4 flex flex-col gap-2 flex-1 justify-between bg-surface-container-lowest">
+                <p class="text-xs text-on-surface-variant line-clamp-2">Milky glazed nudes, micro-French lines, pearlescent sheer donuts, and serene everyday chic.</p>
+                <div class="pt-2 flex items-center justify-between text-primary text-xs font-bold">
+                  <span>Explore Minimal</span>
+                  <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floral Card -->
+            <div 
+              onclick="filterByCollection('Floral')" 
+              class="group relative flex flex-col bg-surface-container-lowest rounded-2xl overflow-hidden shadow-[0_8px_24px_-4px_rgba(74,62,69,0.05)] hover:shadow-[0_16px_32px_-6px_rgba(74,62,69,0.12)] transition-all transform hover:-translate-y-1 cursor-pointer border border-surface-container"
+            >
+              <div class="relative h-72 w-full overflow-hidden bg-surface-container">
+                <img 
+                  src="https://images.unsplash.com/photo-1599839575945-a9e5af0c3fa5?auto=format&fit=crop&w=800&q=80" 
+                  alt="Handpainted botanical floral press-on nails" 
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-on-surface text-[11px] font-bold">
+                  Artisanal Handpainted
+                </div>
+                <div class="absolute bottom-3 left-3 right-3 text-white">
+                  <span class="text-[10px] uppercase tracking-wider text-primary-fixed-dim block font-bold">From Rs 1,599</span>
+                  <h3 class="font-serif-headline text-xl font-bold">Botanical Floral</h3>
+                </div>
+              </div>
+              <div class="p-4 flex flex-col gap-2 flex-1 justify-between bg-surface-container-lowest">
+                <p class="text-xs text-on-surface-variant line-clamp-2">Hand-painted garden blossoms, encapsulated dried petals, and delicate rose-gold vine accents.</p>
+                <div class="pt-2 flex items-center justify-between text-primary text-xs font-bold">
+                  <span>Explore Floral</span>
+                  <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bridal Card -->
+            <div 
+              onclick="filterByCollection('Bridal')" 
+              class="group relative flex flex-col bg-surface-container-lowest rounded-2xl overflow-hidden shadow-[0_8px_24px_-4px_rgba(74,62,69,0.05)] hover:shadow-[0_16px_32px_-6px_rgba(74,62,69,0.12)] transition-all transform hover:-translate-y-1 cursor-pointer border border-surface-container"
+            >
+              <div class="relative h-72 w-full overflow-hidden bg-surface-container">
+                <img 
+                  src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80" 
+                  alt="Bridal suite luxury press-on nails" 
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-on-surface text-[11px] font-bold">
+                  Wedding & Gala
+                </div>
+                <div class="absolute bottom-3 left-3 right-3 text-white">
+                  <span class="text-[10px] uppercase tracking-wider text-primary-fixed-dim block font-bold">From Rs 1,899</span>
+                  <h3 class="font-serif-headline text-xl font-bold">Bridal Suite</h3>
+                </div>
+              </div>
+              <div class="p-4 flex flex-col gap-2 flex-1 justify-between bg-surface-container-lowest">
+                <p class="text-xs text-on-surface-variant line-clamp-2">Pearlescent mother-of-pearl, lace filigree accents, gentle blush ombre, and Swarovski gems.</p>
+                <div class="pt-2 flex items-center justify-between text-primary text-xs font-bold">
+                  <span>Explore Bridal</span>
+                  <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- =======================================================================
+           4. SHOP / BEST SELLERS SECTION (LIVE ARRAY & CART READY)
+           ======================================================================= -->
+      <section id="shop" class="max-w-[1360px] mx-auto px-6 lg:px-8 py-16 scroll-mt-20">
+        
+        <!-- Header -->
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <span class="text-xs font-bold text-primary uppercase tracking-widest">MOST COVETED</span>
+          <h2 class="font-serif-headline text-3xl sm:text-4xl font-bold text-on-surface mt-1">Atelier Shop</h2>
+          <p class="text-sm text-on-surface-variant mt-2">
+            Loved by thousands of nail enthusiasts. Each set includes our complimentary 7-piece salon prep kit and adhesive tabs.
+          </p>
+        </div>
+
+        <!-- Filter Pills & Search Bar Toolbar -->
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-8 bg-surface-container-lowest p-3 rounded-2xl border border-surface-container shadow-xs">
+          
+          <!-- Category Filter Buttons -->
+          <div class="flex items-center gap-1.5 flex-wrap w-full md:w-auto">
+            <button 
+              type="button" 
+              onclick="filterByCollection('All')" 
+              data-category="All"
+              class="filter-btn active px-4 py-2 rounded-full text-xs font-bold bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors cursor-pointer"
+            >
+              All Sets
+            </button>
+            <button 
+              type="button" 
+              onclick="filterByCollection('Glam')" 
+              data-category="Glam"
+              class="filter-btn px-4 py-2 rounded-full text-xs font-bold bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors cursor-pointer"
+            >
+              Glam Atelier
+            </button>
+            <button 
+              type="button" 
+              onclick="filterByCollection('Minimal')" 
+              data-category="Minimal"
+              class="filter-btn px-4 py-2 rounded-full text-xs font-bold bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors cursor-pointer"
+            >
+              Pure Minimal
+            </button>
+            <button 
+              type="button" 
+              onclick="filterByCollection('Floral')" 
+              data-category="Floral"
+              class="filter-btn px-4 py-2 rounded-full text-xs font-bold bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors cursor-pointer"
+            >
+              Botanical Floral
+            </button>
+            <button 
+              type="button" 
+              onclick="filterByCollection('Bridal')" 
+              data-category="Bridal"
+              class="filter-btn px-4 py-2 rounded-full text-xs font-bold bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors cursor-pointer"
+            >
+              Bridal Suite
+            </button>
+          </div>
+
+          <!-- Search Input -->
+          <div class="relative w-full md:w-64">
+            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant/60 text-[18px]">search</span>
+            <input 
+              id="shop-search"
+              type="text" 
+              placeholder="Search nail art, shape..." 
+              class="w-full pl-9 pr-4 py-2 rounded-full bg-surface-container-low text-xs text-on-surface focus:outline-none focus:ring-1 focus:ring-primary-container"
+            />
+          </div>
+
+        </div>
+
+        <!-- Dynamic Product Grid (Rendered by script.js) -->
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Populated dynamically by script.js -->
+        </div>
+
+      </section>
+
+      <!-- =======================================================================
+           5. WHY CHOOSE VELVETSTORE SECTION
+           ======================================================================= -->
+      <section id="why-choose" class="w-full bg-surface-container py-16">
+        <div class="max-w-[1360px] mx-auto px-6 lg:px-8">
+          
+          <div class="text-center max-w-xl mx-auto mb-12">
+            <span class="text-xs font-bold text-primary uppercase tracking-widest">THE VELVET STANDARD</span>
+            <h2 class="font-serif-headline text-3xl sm:text-4xl font-bold text-on-surface mt-1">Why Choose VelvetStore</h2>
+            <p class="text-sm text-on-surface-variant mt-2">Elevating the press-on ritual through master craftsmanship and zero natural nail damage.</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <!-- Feature 1 -->
+            <div class="bg-surface-container-lowest rounded-3xl p-6 shadow-[0_8px_24px_-4px_rgba(74,62,69,0.04)] flex flex-col items-start relative overflow-hidden group border border-surface-container">
+              <div class="w-14 h-14 rounded-2xl bg-secondary-container flex items-center justify-center text-primary mb-5 shadow-xs group-hover:scale-110 transition-transform">
+                <span class="material-symbols-outlined text-[28px]">brush</span>
+              </div>
+              <span class="text-[11px] font-bold text-primary tracking-widest uppercase mb-1">5-Layer Architecture</span>
+              <h3 class="font-serif-headline text-xl font-bold text-on-surface mb-2">Handmade Quality</h3>
+              <p class="text-sm text-on-surface-variant leading-relaxed">
+                Each set is artisanally sculpted with 5 layers of salon-grade gel, cured to perfection for indestructible shine and durability that withstands daily life.
+              </p>
+              <div class="mt-4 pt-2 flex items-center gap-2 text-primary text-xs font-bold">
+                <span class="material-symbols-outlined text-[16px]">verified</span>
+                <span>Hand-finished by licensed artists</span>
+              </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="bg-surface-container-lowest rounded-3xl p-6 shadow-[0_8px_24px_-4px_rgba(74,62,69,0.04)] flex flex-col items-start relative overflow-hidden group border border-surface-container">
+              <div class="w-14 h-14 rounded-2xl bg-tertiary-fixed flex items-center justify-center text-tertiary mb-5 shadow-xs group-hover:scale-110 transition-transform">
+                <span class="material-symbols-outlined text-[28px]">recycling</span>
+              </div>
+              <span class="text-[11px] font-bold text-tertiary tracking-widest uppercase mb-1">Zero Damage Ritual</span>
+              <h3 class="font-serif-headline text-xl font-bold text-on-surface mb-2">Reusable & Easy to Apply</h3>
+              <p class="text-sm text-on-surface-variant leading-relaxed">
+                Gentle on natural nails. Apply in under 10 minutes with our non-damaging adhesive tabs or resin glue, reusable up to 5+ times with no loss of structural luster.
+              </p>
+              <div class="mt-4 pt-2 flex items-center gap-2 text-tertiary text-xs font-bold">
+                <span class="material-symbols-outlined text-[16px]">all_inclusive</span>
+                <span>Wear for a weekend or 3 weeks</span>
+              </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="bg-surface-container-lowest rounded-3xl p-6 shadow-[0_8px_24px_-4px_rgba(74,62,69,0.04)] flex flex-col items-start relative overflow-hidden group border border-surface-container">
+              <div class="w-14 h-14 rounded-2xl bg-primary-fixed flex items-center justify-center text-primary mb-5 shadow-xs group-hover:scale-110 transition-transform">
+                <span class="material-symbols-outlined text-[28px]">local_shipping</span>
+              </div>
+              <span class="text-[11px] font-bold text-primary tracking-widest uppercase mb-1">Complimentary Prep Kit</span>
+              <h3 class="font-serif-headline text-xl font-bold text-on-surface mb-2">Fast Delivery</h3>
+              <p class="text-sm text-on-surface-variant leading-relaxed">
+                Express dispatched in our signature velvet keepsake storage box with a complete 7-piece application prep kit included with every single couture order.
+              </p>
+              <div class="mt-4 pt-2 flex items-center gap-2 text-primary text-xs font-bold">
+                <span class="material-symbols-outlined text-[16px]">inventory_2</span>
+                <span>Keepsake velvet archive box</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- =======================================================================
+           6. CUSTOMER REVIEWS SECTION
+           ======================================================================= -->
+      <section class="max-w-[1360px] mx-auto px-6 lg:px-8 py-16">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+          <div class="flex flex-col gap-1 max-w-xl">
+            <span class="text-xs font-bold text-primary uppercase tracking-widest">LOVE NOTES</span>
+            <h2 class="font-serif-headline text-3xl sm:text-4xl font-bold text-on-surface">Flawless Nails, Verified Raves</h2>
+            <div class="flex items-center gap-2 mt-1">
+              <div class="flex text-primary">
+                <span class="material-symbols-outlined text-[18px] icon-filled">star</span>
+                <span class="material-symbols-outlined text-[18px] icon-filled">star</span>
+                <span class="material-symbols-outlined text-[18px] icon-filled">star</span>
+                <span class="material-symbols-outlined text-[18px] icon-filled">star</span>
+                <span class="material-symbols-outlined text-[18px] icon-filled">star</span>
+              </div>
+              <span class="font-serif-headline text-lg font-bold text-on-surface">4.9 / 5</span>
+              <span class="text-xs text-on-surface-variant">from 1,800+ atelier clients</span>
+            </div>
+          </div>
+          <a href="#shop" class="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:underline">
+            <span>Read all customer stories</span>
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Testimonial 1 -->
+          <div class="bg-surface-container-lowest rounded-3xl p-6 shadow-[0_8px_24px_-4px_rgba(74,62,69,0.05)] flex flex-col justify-between border border-surface-container">
+            <div>
+              <div class="flex text-primary mb-3">
+                <span class="material-symbols-outlined text-[16px] icon-filled">star</span>
+                <span class="material-symbols-outlined text-[16px] icon-filled">star</span>
+                <span class="material-symbols-outlined text-[16px] icon-filled">star</span>
+                <span class="material-symbols-outlined text-[16px] icon-filled">star</span>
+                <span class="material-symbols-outlined text-[16px] icon-filled">star</span>
+              </div>
+              <p class="text-sm text-on-surface italic leading-relaxed">
+                “I got so many compliments at my best friend’s wedding! Nobody believed they were press-ons. They lasted two full weeks without budging even through dancing and luggage handling.”
+              </p>
+            </div>
+            <div class="pt-4 mt-4 border-t border-surface-container flex items-center justify-between">
+              <div>
+                <div class="flex items-center gap-1.5">
+                  <span class="text-xs font-bold text-on-surface">Elena R.</span>
+                  <span class="material-symbols-outlined text-primary text-[14px]">check_circle</span>
+                </div>
+                <span class="text-[11px] text-on-surface-variant">Verified Buyer</span>
+              </div>
+              <div class="text-right">
+                <span class="text-[10px] uppercase font-bold tracking-wider text-primary-container block">Wore:</span>
+                <span class="text-xs font-semibold text-on-surface">Lilac Glaze & Pearl</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="bg-surface-container-lowest rounded-3xl p-6 shadow-[0_8px_24px_-4px_rgba(74,62,69,0.05)] flex flex-col justify-between border border-surface-container">
+            <div>
+              <div class="flex text-primary mb-3">
+                <span class="material-symbols-outlined text-[16px] icon-filled">star</span>
+                <span class="material-symbols-outlined text-[16px] icon-filled">star</span>
+                <span class="material-symbols-outlined text-[16px] icon-filled">star</span>
+                <span class="material-symbols-outlined text-[16px] icon-filled">star</span>
+                <span class="material-symbols-outlined text-[16px] icon-filled">star</span>
+              </div>
+              <p class="text-sm text-on-surface italic leading-relaxed">
+                “As a busy corporate professional, I don’t have 2 hours for salon appointments anymore. VelvetStore nails are effortless, gorgeous, and the gel thickness feels identical to high-end acrylics.”
+              </p>
+            </div>
+            <div class="pt-4 mt-4 border-t border-surface-container flex items-center justify-between">
+              <div>
+                <div class="flex items-center gap-1.5">
+                  <span class="text-xs font-bold text-on-surface">Sophia M.</span>
+                  <span class="material-symbols-outlined text-primary text-[14px]">check_circle</span>
+                </div>
+                <span class="text-[11px] text-on-surface-variant">Verified Buyer</span>
+              </div>
+              <div class="text-right">
+                <span class="text-[10px] uppercase font-bold tracking-wider text-primary-container block">Wore:</span>
+                <span class="text-xs font-semibold text-on-surface">Milky French Micro-Tip</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="bg-surface-container-lowest rounded-3xl p-6 shadow-[0_8px_24px_-4px_rgba(74,62,69,0.05)] flex flex-col justify-between border border-surface-container">
+            <div>
+              <div class="flex text-primary mb-3">
+                <span class="material-symbols-outlined text-[16px] icon-filled">star</span>
+                <span class="material-symbols-outlined text-[16px] icon-filled">star</span>
+                <span class="material-symbols-outlined text-[16px] icon-filled">star</span>
+                <span class="material-symbols-outlined text-[16px] icon-filled">star</span>
+                <span class="material-symbols-outlined text-[16px] icon-filled">star</span>
+              </div>
+              <p class="text-sm text-on-surface italic leading-relaxed">
+                “The sizing kit was spot on and the reusability is real. This is my third time wearing this set and the chrome is still immaculate! Safe removal with lukewarm oil takes 5 minutes.”
+              </p>
+            </div>
+            <div class="pt-4 mt-4 border-t border-surface-container flex items-center justify-between">
+              <div>
+                <div class="flex items-center gap-1.5">
+                  <span class="text-xs font-bold text-on-surface">Camille V.</span>
+                  <span class="material-symbols-outlined text-primary text-[14px]">check_circle</span>
+                </div>
+                <span class="text-[11px] text-on-surface-variant">Verified Buyer</span>
+              </div>
+              <div class="text-right">
+                <span class="text-[10px] uppercase font-bold tracking-wider text-primary-container block">Wore:</span>
+                <span class="text-xs font-semibold text-on-surface">Rose Quartz Flakes</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- =======================================================================
+           7. INSTAGRAM & SOCIAL GALLERY
+           ======================================================================= -->
+      <section class="w-full bg-surface-container-low py-16">
+        <div class="max-w-[1360px] mx-auto px-6 lg:px-8 flex flex-col items-center">
+          
+          <div class="text-center max-w-xl mb-8">
+            <span class="text-xs font-bold text-primary uppercase tracking-widest">@VELVETSTORENAILS</span>
+            <h2 class="font-serif-headline text-3xl sm:text-4xl font-bold text-on-surface mt-1">Spotted in Velvet</h2>
+            <p class="text-sm text-on-surface-variant mt-2">Tag us with <strong class="text-primary font-bold">#VelvetNailAtelier</strong> to be featured on our curated runway feed.</p>
+          </div>
+
+          <!-- 5 Photo Instagram Feed Row -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 w-full mb-8">
+            
+            <div class="group relative aspect-square rounded-2xl overflow-hidden bg-surface-container">
+              <img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=600&q=80" alt="VelvetStore press-on nails aesthetic" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4 text-white">
+                <div class="flex items-center gap-1 text-xs"><span class="material-symbols-outlined text-[18px]">favorite</span> 1.2k</div>
+                <div class="flex items-center gap-1 text-xs"><span class="material-symbols-outlined text-[18px]">chat_bubble</span> 48</div>
+              </div>
+            </div>
+
+            <div class="group relative aspect-square rounded-2xl overflow-hidden bg-surface-container">
+              <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=600&q=80" alt="VelvetStore press-on nails aesthetic" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4 text-white">
+                <div class="flex items-center gap-1 text-xs"><span class="material-symbols-outlined text-[18px]">favorite</span> 2.4k</div>
+                <div class="flex items-center gap-1 text-xs"><span class="material-symbols-outlined text-[18px]">chat_bubble</span> 96</div>
+              </div>
+            </div>
+
+            <div class="group relative aspect-square rounded-2xl overflow-hidden bg-surface-container">
+              <img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=600&q=80" alt="VelvetStore press-on nails aesthetic" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4 text-white">
+                <div class="flex items-center gap-1 text-xs"><span class="material-symbols-outlined text-[18px]">favorite</span> 890</div>
+                <div class="flex items-center gap-1 text-xs"><span class="material-symbols-outlined text-[18px]">chat_bubble</span> 32</div>
+              </div>
+            </div>
+
+            <div class="group relative aspect-square rounded-2xl overflow-hidden bg-surface-container">
+              <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80" alt="VelvetStore press-on nails aesthetic" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4 text-white">
+                <div class="flex items-center gap-1 text-xs"><span class="material-symbols-outlined text-[18px]">favorite</span> 3.1k</div>
+                <div class="flex items-center gap-1 text-xs"><span class="material-symbols-outlined text-[18px]">chat_bubble</span> 114</div>
+              </div>
+            </div>
+
+            <div class="group relative aspect-square rounded-2xl overflow-hidden bg-surface-container col-span-2 sm:col-span-1">
+              <img src="https://images.unsplash.com/photo-1599839575945-a9e5af0c3fa5?auto=format&fit=crop&w=600&q=80" alt="VelvetStore press-on nails aesthetic" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4 text-white">
+                <div class="flex items-center gap-1 text-xs"><span class="material-symbols-outlined text-[18px]">favorite</span> 1.8k</div>
+                <div class="flex items-center gap-1 text-xs"><span class="material-symbols-outlined text-[18px]">chat_bubble</span> 62</div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Follow CTA -->
+          <a 
+            href="https://instagram.com" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="inline-flex items-center gap-2 text-xs font-bold bg-surface-container-lowest text-on-surface px-8 py-3.5 rounded-full shadow-xs hover:bg-secondary-container hover:text-on-secondary-container transition-all"
+          >
+            <span class="material-symbols-outlined text-primary text-[20px]">photo_camera</span>
+            <span>Follow Us on Instagram</span>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- =======================================================================
+           8. SIZING KIT ASSURANCE BANNER
+           ======================================================================= -->
+      <section class="max-w-[1360px] mx-auto px-6 lg:px-8 py-8 w-full">
+        <div class="bg-gradient-to-r from-secondary-container/80 via-surface-container to-tertiary-fixed/50 rounded-3xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 border border-surface-container-high">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary shrink-0 shadow-xs">
+              <span class="material-symbols-outlined text-[24px]">straighten</span>
+            </div>
+            <div>
+              <h4 class="font-serif-headline text-xl font-bold text-on-surface">Unsure of your custom nail sizing?</h4>
+              <p class="text-xs text-on-surface-variant mt-0.5">Order our Sizing Sample Kit with free delivery — credited directly back toward your first bespoke set.</p>
+            </div>
+          </div>
+          <button 
+            type="button" 
+            onclick="openSizingGuideModal()" 
+            class="shrink-0 bg-surface-container-lowest text-on-surface font-bold text-xs px-6 py-3 rounded-full hover:bg-primary hover:text-white transition-all shadow-xs cursor-pointer"
+          >
+            Open Sizing Guide
+          </button>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       9. FOOTER
+       ========================================================================= -->
+  <footer id="contact" class="w-full bg-surface-container-low text-on-surface mt-16 border-t border-surface-container">
+    <div class="max-w-[1360px] mx-auto px-6 lg:px-8 pt-16 pb-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pb-12 border-b border-surface-container">
+        
+        <!-- Brand Info -->
+        <div class="lg:col-span-4 flex flex-col items-start">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-9 h-9 rounded-full bg-secondary-container flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined text-[20px] icon-filled">spa</span>
+            </div>
+            <span class="font-serif-headline text-2xl font-bold tracking-tight text-primary">VelvetStore</span>
+          </div>
+          <p class="text-xs text-on-surface-variant max-w-sm mb-6 leading-relaxed">
+            Luxury handcrafted press-on nails made to last and made to impress. Salon-grade gel artistry curated for the modern connoisseur.
+          </p>
+          <div class="flex items-center gap-2">
+            <a href="#" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-secondary-container hover:text-primary transition-colors">
+              <span class="material-symbols-outlined text-[18px]">photo_camera</span>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-secondary-container hover:text-primary transition-colors">
+              <span class="material-symbols-outlined text-[18px]">videocam</span>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-secondary-container hover:text-primary transition-colors">
+              <span class="material-symbols-outlined text-[18px]">push_pin</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Maison Links -->
+        <div class="lg:col-span-2 flex flex-col gap-2">
+          <h4 class="text-xs font-bold text-primary tracking-wider uppercase mb-2">Maison</h4>
+          <a href="#shop" class="text-xs text-on-surface-variant hover:text-primary transition-colors">Shop All</a>
+          <a href="#collections" class="text-xs text-on-surface-variant hover:text-primary transition-colors">Collections</a>
+          <a href="#why-choose" class="text-xs text-on-surface-variant hover:text-primary transition-colors">Our Atelier</a>
+          <a href="/admin.html" class="text-xs text-primary font-bold hover:underline transition-colors flex items-center gap-1">
+            <span class="material-symbols-outlined text-[14px]">tune</span> Private Admin
+          </a>
+        </div>
+
+        <!-- Client Care -->
+        <div class="lg:col-span-2 flex flex-col gap-2">
+          <h4 class="text-xs font-bold text-primary tracking-wider uppercase mb-2">Client Care</h4>
+          <button type="button" onclick="openSizingGuideModal()" class="text-xs text-left text-on-surface-variant hover:text-primary transition-colors cursor-pointer">Sizing Guide</button>
+          <a href="#why-choose" class="text-xs text-on-surface-variant hover:text-primary transition-colors">Care & Removal</a>
+          <div class="mt-2 pt-1">
+            <p class="text-[10px] text-on-surface-variant uppercase tracking-wider font-bold">Concierge Line</p>
+            <a href="mailto:concierge@velvetstore.com" class="text-xs text-primary hover:underline block">concierge@velvetstore.com</a>
+            <a href="https://wa.me/919876543210" target="_blank" class="text-xs text-primary hover:underline block">+91 98765 43210</a>
+          </div>
+        </div>
+
+        <!-- Newsletter Dispatch -->
+        <div class="lg:col-span-4 flex flex-col">
+          <h4 class="text-xs font-bold text-primary tracking-wider uppercase mb-2">Private Salon Dispatch</h4>
+          <p class="text-xs text-on-surface-variant mb-4">Receive exclusive couture drop previews, private sizing masterclasses, and atelier news.</p>
+          <form onsubmit="handleNewsletterSubmit(event)" class="flex flex-col sm:flex-row items-stretch gap-2 mb-3">
+            <input 
+              id="newsletter-email"
+              type="email" 
+              required
+              placeholder="Enter your email address" 
+              class="flex-1 bg-surface-container-lowest text-xs text-on-surface px-4 py-3 rounded-full outline-none focus:ring-1 focus:ring-primary-container"
+            />
+            <button type="submit" class="btn-atelier-primary text-xs font-bold px-6 py-3 rounded-full cursor-pointer">
+              Subscribe
+            </button>
+          </form>
+          <div class="flex items-center gap-1.5 text-on-surface-variant text-[11px]">
+            <span class="material-symbols-outlined text-[15px] text-primary">verified_user</span>
+            <span>Bespoke craftsmanship & privacy guaranteed</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright & Payment -->
+      <div class="pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-on-surface-variant">© 2026 VelvetStore Haute Couture Nails. All rights reserved.</p>
+        <div class="flex items-center gap-2 text-on-surface-variant text-[11px] font-semibold">
+          <span class="px-3 py-1 rounded-full bg-surface-container">Visa</span>
+          <span class="px-3 py-1 rounded-full bg-surface-container">Mastercard</span>
+          <span class="px-3 py-1 rounded-full bg-surface-container">UPI / COD</span>
+          <span class="px-3 py-1 rounded-full bg-surface-container">WhatsApp</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- =========================================================================
+       10. CART DRAWER (SLIDE-OUT FROM RIGHT)
+       ========================================================================= -->
+  <div id="cart-drawer-overlay" onclick="closeCartDrawer()" class="fixed inset-0 bg-black/40 backdrop-blur-xs z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+  
+  <aside 
+    id="cart-drawer" 
+    class="fixed top-0 right-0 bottom-0 w-full max-w-md bg-surface-container-lowest z-50 shadow-2xl flex flex-col translate-x-full transition-transform duration-300 border-l border-surface-container"
+  >
+    <!-- Drawer Header -->
+    <div class="p-5 border-b border-surface-container flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary text-[22px]">shopping_bag</span>
+        <h3 class="font-serif-headline text-lg font-bold text-on-surface">Your Atelier Bag</h3>
+      </div>
+      <button 
+        type="button" 
+        onclick="closeCartDrawer()" 
+        class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-surface-container text-on-surface-variant transition-colors cursor-pointer"
+        aria-label="Close Bag"
+      >
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+    </div>
+
+    <!-- Free Prep Kit Banner inside drawer -->
+    <div class="bg-secondary-container/60 px-5 py-2.5 flex items-center gap-2 text-xs text-on-secondary-container">
+      <span class="material-symbols-outlined text-primary text-[16px]">redeem</span>
+      <span>Complimentary 7-piece nail prep kit included!</span>
+    </div>
+
+    <!-- Drawer Items List -->
+    <div id="cart-drawer-items" class="flex-1 overflow-y-auto p-5 flex flex-col gap-3">
+      <!-- Populated by script.js -->
+    </div>
+
+    <!-- Empty State -->
+    <div id="cart-drawer-empty" class="hidden flex-1 flex flex-col items-center justify-center p-8 text-center">
+      <div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-primary-container mb-4">
+        <span class="material-symbols-outlined text-[32px]">shopping_bag</span>
+      </div>
+      <h4 class="font-serif-headline text-lg font-bold text-on-surface mb-1">Your bag is empty</h4>
+      <p class="text-xs text-on-surface-variant mb-6 max-w-xs">Discover our salon-grade press-on creations and add your favorite sets.</p>
+      <button 
+        type="button" 
+        onclick="closeCartDrawer(); filterByCollection('All');" 
+        class="btn-atelier-primary px-6 py-2.5 rounded-full text-xs font-bold cursor-pointer"
+      >
+        Explore Best Sellers
+      </button>
+    </div>
+
+    <!-- Drawer Footer (Subtotal & Checkout CTA) -->
+    <div id="cart-drawer-footer" class="p-5 border-t border-surface-container bg-surface-container-low/50 flex flex-col gap-3">
+      <div class="flex items-center justify-between text-xs text-on-surface-variant">
+        <span>Subtotal</span>
+        <span id="cart-drawer-subtotal" class="font-serif-headline text-sm font-bold text-on-surface">Rs 0</span>
+      </div>
+      <div class="flex items-center justify-between text-sm font-bold text-on-surface pt-1 border-t border-surface-container">
+        <span>Estimated Total</span>
+        <span id="cart-drawer-total" class="font-serif-headline text-lg text-primary">Rs 0</span>
+      </div>
+      <button 
+        type="button" 
+        onclick="openCheckoutModal()" 
+        class="w-full btn-atelier-primary py-3.5 rounded-full font-bold text-xs flex items-center justify-center gap-2 cursor-pointer shadow-md"
+      >
+        <span>Proceed to Checkout</span>
+        <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+      </button>
+    </div>
+  </aside>
+
+
+  <!-- =========================================================================
+       11. CHECKOUT MODAL (ORDER FORM & WHATSAPP DIRECT)
+       ========================================================================= -->
+  <div id="checkout-modal" class="modal-overlay modal-hidden fixed inset-0 bg-black/50 backdrop-blur-xs z-50 flex items-center justify-center p-4">
+    <div class="modal-content w-full max-w-lg bg-surface-container-lowest rounded-3xl p-6 sm:p-8 shadow-2xl relative border border-surface-container max-h-[90vh] overflow-y-auto">
+      
+      <!-- Close Button -->
+      <button 
+        type="button" 
+        onclick="closeCheckoutModal()" 
+        class="absolute top-5 right-5 w-8 h-8 rounded-full flex items-center justify-center hover:bg-surface-container text-on-surface-variant transition-colors cursor-pointer"
+      >
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+
+      <!-- Modal Header -->
+      <div class="text-center mb-6">
+        <span class="text-[10px] uppercase font-bold tracking-widest text-primary bg-secondary-container px-3 py-1 rounded-full">Atelier Checkout</span>
+        <h3 class="font-serif-headline text-2xl font-bold text-on-surface mt-2">Complete Your Couture Order</h3>
+        <p class="text-xs text-on-surface-variant mt-1">Order summary: <span id="checkout-items-count" class="font-bold text-primary">0 items</span> · Total: <span id="checkout-total" class="font-bold text-primary">Rs 0</span></p>
+      </div>
+
+      <!-- Checkout Form -->
+      <form onsubmit="handleCheckoutSubmit(event)" class="flex flex-col gap-4">
+        
+        <div>
+          <label class="block text-xs font-semibold text-on-surface-variant mb-1">Your Full Name *</label>
+          <div class="relative flex items-center">
+            <span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant/60 text-[18px]">person</span>
+            <input 
+              id="checkout-name" 
+              type="text" 
+              required 
+              placeholder="e.g. Genevieve Dupont" 
+              class="w-full pl-10 pr-4 py-2.5 rounded-full bg-surface-container-low text-xs text-on-surface outline-none focus:ring-1 focus:ring-primary-container"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-on-surface-variant mb-1">Phone Number (WhatsApp Preferred) *</label>
+          <div class="relative flex items-center">
+            <span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant/60 text-[18px]">phone</span>
+            <input 
+              id="checkout-phone" 
+              type="tel" 
+              required 
+              placeholder="+91 98765 43210" 
+              class="w-full pl-10 pr-4 py-2.5 rounded-full bg-surface-container-low text-xs text-on-surface outline-none focus:ring-1 focus:ring-primary-container"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-on-surface-variant mb-1">Email Address</label>
+          <div class="relative flex items-center">
+            <span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant/60 text-[18px]">mail</span>
+            <input 
+              id="checkout-email" 
+              type="email" 
+              placeholder="name@domain.com" 
+              class="w-full pl-10 pr-4 py-2.5 rounded-full bg-surface-container-low text-xs text-on-surface outline-none focus:ring-1 focus:ring-primary-container"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-on-surface-variant mb-1">Complete Delivery Address *</label>
+          <textarea 
+            id="checkout-address" 
+            required 
+            rows="2" 
+            placeholder="House/Apartment #, Street, Landmark, City, Pincode" 
+            class="w-full p-3.5 rounded-2xl bg-surface-container-low text-xs text-on-surface outline-none focus:ring-1 focus:ring-primary-container resize-none"
+          ></textarea>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-on-surface-variant mb-1">Custom Sizing Notes / Special Instructions</label>
+          <input 
+            id="checkout-notes" 
+            type="text" 
+            placeholder="e.g., Thumb 15mm, Index 12mm or custom length" 
+            class="w-full px-4 py-2.5 rounded-full bg-surface-container-low text-xs text-on-surface outline-none focus:ring-1 focus:ring-primary-container"
+          />
+        </div>
+
+        <!-- Payment Method -->
+        <div>
+          <label class="block text-xs font-semibold text-on-surface-variant mb-1.5">Payment Option</label>
+          <div class="grid grid-cols-2 gap-2 text-xs">
+            <label class="flex items-center gap-2 p-2.5 rounded-xl border border-surface-container cursor-pointer bg-surface-container-low/50">
+              <input type="radio" name="paymentMethod" value="Cash on Delivery" checked class="text-primary accent-primary" />
+              <span>Cash on Delivery</span>
+            </label>
+            <label class="flex items-center gap-2 p-2.5 rounded-xl border border-surface-container cursor-pointer bg-surface-container-low/50">
+              <input type="radio" name="paymentMethod" value="Online / Direct Pay" class="text-primary accent-primary" />
+              <span>Online / UPI</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Action Buttons (Place Order & Send via WhatsApp) -->
+        <div class="flex flex-col gap-2 pt-2">
+          
+          <button 
+            type="submit" 
+            class="w-full btn-atelier-primary py-3.5 rounded-full font-bold text-xs flex items-center justify-center gap-2 cursor-pointer shadow-md"
+          >
+            <span class="material-symbols-outlined text-[18px]">verified</span>
+            <span>Confirm & Place Order</span>
+          </button>
+
+          <button 
+            type="button" 
+            onclick="sendOrderViaWhatsApp()" 
+            class="w-full py-3.5 rounded-full bg-[#25D366] text-white hover:bg-[#20ba59] font-bold text-xs flex items-center justify-center gap-2 transition-colors cursor-pointer shadow-sm"
+          >
+            <span class="material-symbols-outlined text-[18px]">chat</span>
+            <span>Send Order via WhatsApp Link</span>
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+
+  <!-- =========================================================================
+       12. ORDER SUCCESS CONFIRMATION MODAL
+       ========================================================================= -->
+  <div id="order-success-modal" class="modal-overlay modal-hidden fixed inset-0 bg-black/50 backdrop-blur-xs z-50 flex items-center justify-center p-4">
+    <div class="modal-content w-full max-w-md bg-surface-container-lowest rounded-3xl p-6 sm:p-8 shadow-2xl relative border border-surface-container text-center">
+      
+      <div class="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center text-primary mx-auto mb-4">
+        <span class="material-symbols-outlined text-[32px] icon-filled">check_circle</span>
+      </div>
+
+      <span class="text-[10px] uppercase font-bold tracking-widest text-primary bg-surface-container px-3 py-1 rounded-full">Atelier Confirmation</span>
+      <h3 class="font-serif-headline text-2xl font-bold text-on-surface mt-2">Order Confirmed!</h3>
+      <p id="success-whatsapp-notice" class="text-xs text-on-surface-variant mt-2 leading-relaxed">
+        Your handcrafted press-on set order has been received and scheduled for dispatch.
+      </p>
+
+      <div class="bg-surface-container-low rounded-2xl p-4 my-5 text-left text-xs flex flex-col gap-1.5 border border-surface-container">
+        <div class="flex justify-between">
+          <span class="text-on-surface-variant">Order Reference:</span>
+          <span id="success-order-id" class="font-bold text-primary">#VS-000000</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-on-surface-variant">Recipient:</span>
+          <span id="success-customer-name" class="font-bold text-on-surface">Customer</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-on-surface-variant">Order Total:</span>
+          <span id="success-order-total" class="font-serif-headline font-bold text-primary">Rs 0</span>
+        </div>
+        <div class="flex justify-between pt-1 border-t border-surface-container text-[11px]">
+          <span class="text-on-surface-variant">Inclusions:</span>
+          <span class="font-semibold text-on-surface">7-Piece Salon Prep Kit</span>
+        </div>
+      </div>
+
+      <button 
+        type="button" 
+        onclick="closeOrderSuccessModal()" 
+        class="w-full btn-atelier-primary py-3 rounded-full font-bold text-xs cursor-pointer"
+      >
+        Back to Atelier Boutique
+      </button>
+
+    </div>
+  </div>
+
+
+  <!-- =========================================================================
+       13. LOGIN / SIGN UP MODAL (EXACT STITCH REPLICA OF IMAGE 4 & IMAGE 5)
+       ========================================================================= -->
+  <div id="auth-modal" class="modal-overlay modal-hidden fixed inset-0 bg-black/50 backdrop-blur-xs z-50 flex items-center justify-center p-4">
+    <div class="modal-content w-full max-w-md bg-surface-container-lowest rounded-3xl p-6 sm:p-8 shadow-2xl relative border border-surface-container max-h-[92vh] overflow-y-auto">
+      
+      <!-- Close Button -->
+      <button 
+        type="button" 
+        onclick="closeAuthModal()" 
+        class="absolute top-5 right-5 w-8 h-8 rounded-full flex items-center justify-center hover:bg-surface-container text-on-surface-variant transition-colors cursor-pointer"
+      >
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+
+      <!-- Ambient Glow Behind Card -->
+      <div class="absolute -top-12 -left-12 w-48 h-48 rounded-full bg-secondary-container/40 blur-3xl pointer-events-none -z-10"></div>
+      <div class="absolute -bottom-10 -right-10 w-52 h-52 rounded-full bg-tertiary-container/30 blur-3xl pointer-events-none -z-10"></div>
+
+      <!-- Header Branding Area -->
+      <header class="flex flex-col items-center text-center mb-6">
+        <div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-primary mb-2 shadow-xs">
+          <span class="material-symbols-outlined text-[24px] icon-filled">spa</span>
+        </div>
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-primary text-[10px] uppercase font-bold tracking-widest mb-2 shadow-xs">
+          <span class="material-symbols-outlined text-[13px] icon-filled">arrow_back_ios_new</span>
+          <span>Haute Press-On Nail Couture</span>
+        </div>
+        <h2 class="font-serif-headline text-2xl font-bold text-on-surface tracking-tight" id="form-heading">
+          Welcome Back to Atelier
+        </h2>
+        <p class="text-xs text-on-surface-variant mt-1 max-w-sm" id="form-subheading">
+          Sign in to manage your custom nail sizing profile and atelier orders.
+        </p>
+
+        <!-- Segmented Toggle -->
+        <div class="mt-5 w-full max-w-xs p-1 rounded-full bg-surface-container-high/80 backdrop-blur-md flex items-center justify-between shadow-inner">
+          <button 
+            type="button" 
+            id="toggle-login" 
+            onclick="switchAuthTab('login')" 
+            class="w-1/2 py-2 text-center rounded-full font-bold text-xs transition-all duration-300 bg-white text-primary shadow-xs cursor-pointer"
+          >
+            Sign In
+          </button>
+          <button 
+            type="button" 
+            id="toggle-signup" 
+            onclick="switchAuthTab('signup')" 
+            class="w-1/2 py-2 text-center rounded-full font-bold text-xs transition-all duration-300 text-on-surface-variant hover:text-on-surface cursor-pointer"
+          >
+            Join Circle
+          </button>
+        </div>
+      </header>
+
+      <!-- Social Authentication (Continue with Google) -->
+      <div class="w-full flex flex-col gap-3 mb-4">
+        <button 
+          type="button" 
+          onclick="handleGoogleAuth()" 
+          class="w-full flex items-center justify-center gap-3 py-3 px-4 rounded-full bg-surface-container-low hover:bg-surface-container transition-all text-xs font-semibold shadow-xs cursor-pointer active:scale-95"
+        >
+          <svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24">
+            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"></path>
+            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"></path>
+          </svg>
+          <span class="text-on-surface">Continue with Google</span>
+        </button>
+
+        <div class="relative flex py-1 items-center">
+          <div class="flex-grow h-px bg-outline-variant/30"></div>
+          <span class="flex-shrink mx-3 text-[10px] text-on-surface-variant uppercase tracking-wider font-bold">or email atelier</span>
+          <div class="flex-grow h-px bg-outline-variant/30"></div>
+        </div>
+      </div>
+
+      <!-- LOGIN FORM -->
+      <form id="login-form" onsubmit="handleLogin(event)" class="flex flex-col gap-3">
+        <div id="login-error-msg" class="hidden text-xs text-red-600 bg-red-50 p-2.5 rounded-xl border border-red-200"></div>
+
+        <div>
+          <label class="block text-xs font-semibold text-on-surface-variant mb-1">Email Address</label>
+          <div class="relative flex items-center">
+            <span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant/60 text-[18px]">mail</span>
+            <input 
+              id="login-email" 
+              type="email" 
+              required 
+              placeholder="name@domain.com" 
+              class="w-full pl-10 pr-4 py-2.5 rounded-full bg-surface-container-low text-xs text-on-surface outline-none focus:ring-1 focus:ring-primary-container"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-on-surface-variant mb-1">Password</label>
+          <div class="relative flex items-center">
+            <span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant/60 text-[18px]">lock</span>
+            <input 
+              id="login-password" 
+              type="password" 
+              required 
+              placeholder="••••••••" 
+              class="w-full pl-10 pr-10 py-2.5 rounded-full bg-surface-container-low text-xs text-on-surface outline-none focus:ring-1 focus:ring-primary-container"
+            />
+            <button 
+              type="button" 
+              onclick="togglePasswordVisibility('login-password', 'login-eye')" 
+              class="absolute right-3.5 text-on-surface-variant/60 hover:text-primary transition-colors cursor-pointer"
+            >
+              <span id="login-eye" class="material-symbols-outlined text-[18px]">visibility</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between text-xs pt-1">
+          <label class="flex items-center gap-2 cursor-pointer">
+            <input type="checkbox" checked class="text-primary accent-primary" />
+            <span class="text-on-surface-variant">Remember me</span>
+          </label>
+          <a href="#" class="text-primary hover:underline">Forgot Password?</a>
+        </div>
+
+        <button 
+          type="submit" 
+          class="w-full mt-2 btn-atelier-primary py-3.5 rounded-full text-xs font-bold flex items-center justify-center gap-2 cursor-pointer shadow-md"
+        >
+          <span>Sign In to Your Account</span>
+          <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </button>
+      </form>
+
+      <!-- SIGN UP FORM (Initially Hidden) -->
+      <form id="signup-form" onsubmit="handleSignUp(event)" class="hidden flex flex-col gap-3">
+        <div id="signup-error-msg" class="hidden text-xs text-red-600 bg-red-50 p-2.5 rounded-xl border border-red-200"></div>
+
+        <div>
+          <label class="block text-xs font-semibold text-on-surface-variant mb-1">Full Name</label>
+          <div class="relative flex items-center">
+            <span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant/60 text-[18px]">badge</span>
+            <input 
+              id="signup-name" 
+              type="text" 
+              required 
+              placeholder="Genevieve Dupont" 
+              class="w-full pl-10 pr-4 py-2.5 rounded-full bg-surface-container-low text-xs text-on-surface outline-none focus:ring-1 focus:ring-primary-container"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-on-surface-variant mb-1">Email Address</label>
+          <div class="relative flex items-center">
+            <span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant/60 text-[18px]">mail</span>
+            <input 
+              id="signup-email" 
+              type="email" 
+              required 
+              placeholder="genevieve@atelier.com" 
+              class="w-full pl-10 pr-4 py-2.5 rounded-full bg-surface-container-low text-xs text-on-surface outline-none focus:ring-1 focus:ring-primary-container"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-on-surface-variant mb-1">Create Password (min 6 characters)</label>
+          <div class="relative flex items-center">
+            <span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant/60 text-[18px]">lock</span>
+            <input 
+              id="signup-password" 
+              type="password" 
+              required 
+              oninput="updateStrength(this.value)" 
+              placeholder="At least 6 characters" 
+              class="w-full pl-10 pr-10 py-2.5 rounded-full bg-surface-container-low text-xs text-on-surface outline-none focus:ring-1 focus:ring-primary-container"
+            />
+            <button 
+              type="button" 
+              onclick="togglePasswordVisibility('signup-password', 'signup-eye')" 
+              class="absolute right-3.5 text-on-surface-variant/60 hover:text-primary transition-colors cursor-pointer"
+            >
+              <span id="signup-eye" class="material-symbols-outlined text-[18px]">visibility</span>
+            </button>
+          </div>
+
+          <!-- Password Strength Indicator -->
+          <div class="px-1 pt-1.5 flex flex-col gap-1">
+            <div class="w-full grid grid-cols-4 gap-1.5 h-1">
+              <div id="bar-1" class="rounded-full bg-surface-container-highest transition-colors duration-300 h-1"></div>
+              <div id="bar-2" class="rounded-full bg-surface-container-highest transition-colors duration-300 h-1"></div>
+              <div id="bar-3" class="rounded-full bg-surface-container-highest transition-colors duration-300 h-1"></div>
+              <div id="bar-4" class="rounded-full bg-surface-container-highest transition-colors duration-300 h-1"></div>
+            </div>
+            <div class="flex justify-between items-center text-on-surface-variant/70 text-[10px]">
+              <span>Strength:</span>
+              <span id="strength-label" class="font-bold text-primary">Minimum 6 characters</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-on-surface-variant mb-1">Confirm Password</label>
+          <div class="relative flex items-center">
+            <span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant/60 text-[18px]">lock_reset</span>
+            <input 
+              id="signup-confirm-password" 
+              type="password" 
+              required 
+              placeholder="Re-enter password" 
+              class="w-full pl-10 pr-4 py-2.5 rounded-full bg-surface-container-low text-xs text-on-surface outline-none focus:ring-1 focus:ring-primary-container"
+            />
+          </div>
+        </div>
+
+        <label class="flex items-start gap-2 cursor-pointer pt-1 text-[11px] text-on-surface-variant leading-snug">
+          <input type="checkbox" checked class="mt-0.5 text-primary accent-primary" />
+          <span>Sign up for exclusive couture drops, sizing masterclasses & VIP previews.</span>
+        </label>
+
+        <button 
+          type="submit" 
+          class="w-full mt-2 btn-atelier-primary py-3.5 rounded-full text-xs font-bold flex items-center justify-center gap-2 cursor-pointer shadow-md"
+        >
+          <span class="material-symbols-outlined text-[16px]">verified</span>
+          <span>Create VIP Atelier Account</span>
+        </button>
+      </form>
+
+      <!-- First Time Guest Promo Banner -->
+      <div class="mt-6 p-4 rounded-2xl bg-surface-container-low/80 flex items-center gap-3 border border-surface-container">
+        <div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center text-primary shrink-0">
+          <span class="material-symbols-outlined text-[18px] icon-filled">redeem</span>
+        </div>
+        <div>
+          <p class="text-xs font-bold text-on-surface">First Time at VelvetStore?</p>
+          <p class="text-[11px] text-on-surface-variant">Enjoy 15% off your first press-on order with code <strong class="text-primary font-bold">VELVET15</strong></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- =========================================================================
+       14. SIZING GUIDE MODAL
+       ========================================================================= -->
+  <div id="sizing-guide-modal" class="modal-overlay modal-hidden fixed inset-0 bg-black/50 backdrop-blur-xs z-50 flex items-center justify-center p-4">
+    <div class="modal-content w-full max-w-lg bg-surface-container-lowest rounded-3xl p-6 sm:p-8 shadow-2xl relative border border-surface-container max-h-[90vh] overflow-y-auto">
+      
+      <button 
+        type="button" 
+        onclick="closeSizingGuideModal()" 
+        class="absolute top-5 right-5 w-8 h-8 rounded-full flex items-center justify-center hover:bg-surface-container text-on-surface-variant transition-colors cursor-pointer"
+      >
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+
+      <div class="text-center mb-6">
+        <span class="text-[10px] uppercase font-bold tracking-widest text-primary bg-secondary-container px-3 py-1 rounded-full">Atelier Sizing Masterclass</span>
+        <h3 class="font-serif-headline text-2xl font-bold text-on-surface mt-2">Find Your Perfect Fit</h3>
+        <p class="text-xs text-on-surface-variant mt-1">Measured in millimeters across the widest curve of each natural nail bed.</p>
+      </div>
+
+      <!-- Size Table -->
+      <div class="overflow-x-auto rounded-2xl border border-surface-container mb-6">
+        <table class="w-full text-left text-xs">
+          <thead class="bg-surface-container text-on-surface font-bold">
+            <tr>
+              <th class="py-2.5 px-3">Size</th>
+              <th class="py-2.5 px-3">Thumb</th>
+              <th class="py-2.5 px-3">Index</th>
+              <th class="py-2.5 px-3">Middle</th>
+              <th class="py-2.5 px-3">Ring</th>
+              <th class="py-2.5 px-3">Pinky</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-surface-container">
+            <tr>
+              <td class="py-2 px-3 font-bold text-primary">XS</td>
+              <td class="py-2 px-3">14mm</td>
+              <td class="py-2 px-3">11mm</td>
+              <td class="py-2 px-3">12mm</td>
+              <td class="py-2 px-3">10mm</td>
+              <td class="py-2 px-3">8mm</td>
+            </tr>
+            <tr class="bg-surface-container-low/50">
+              <td class="py-2 px-3 font-bold text-primary">S (Default)</td>
+              <td class="py-2 px-3">15mm</td>
+              <td class="py-2 px-3">12mm</td>
+              <td class="py-2 px-3">13mm</td>
+              <td class="py-2 px-3">11mm</td>
+              <td class="py-2 px-3">9mm</td>
+            </tr>
+            <tr>
+              <td class="py-2 px-3 font-bold text-primary">M</td>
+              <td class="py-2 px-3">16mm</td>
+              <td class="py-2 px-3">13mm</td>
+              <td class="py-2 px-3">14mm</td>
+              <td class="py-2 px-3">12mm</td>
+              <td class="py-2 px-3">10mm</td>
+            </tr>
+            <tr class="bg-surface-container-low/50">
+              <td class="py-2 px-3 font-bold text-primary">L</td>
+              <td class="py-2 px-3">18mm</td>
+              <td class="py-2 px-3">14mm</td>
+              <td class="py-2 px-3">15mm</td>
+              <td class="py-2 px-3">13mm</td>
+              <td class="py-2 px-3">11mm</td>
+            </tr>
+            <tr>
+              <td class="py-2 px-3 font-bold text-primary">Custom</td>
+              <td colspan="5" class="py-2 px-3 text-on-surface-variant italic">Enter your millimeter measurements during checkout notes</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- How to measure instructions -->
+      <div class="bg-surface-container-low rounded-2xl p-4 flex flex-col gap-2 text-xs mb-6">
+        <h4 class="font-bold text-on-surface flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-[16px] text-primary">edit_note</span>
+          How to Measure in 2 Minutes:
+        </h4>
+        <ol class="list-decimal list-inside space-y-1 text-on-surface-variant">
+          <li>Place a piece of transparent tape across the widest part of your natural nail.</li>
+          <li>Mark the edges of your nail bed with a fine-tip pen.</li>
+          <li>Remove tape and measure between the two dots against a millimeter ruler.</li>
+        </ol>
+      </div>
+
+      <button 
+        type="button" 
+        onclick="closeSizingGuideModal()" 
+        class="w-full btn-atelier-primary py-3 rounded-full font-bold text-xs cursor-pointer"
+      >
+        Got It, Thanks!
+      </button>
+
+    </div>
+  </div>
+
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container"></div>
+
+  <!-- Store Logic Script -->
+  <script type="module" src="/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "name": "VelvetStore | Luxury Press-On Nails Atelier",
+  "description": "Handcrafted salon-grade press-on nails store with custom sizing, interactive cart, collection filtering, WhatsApp order checkout, and private store admin management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
